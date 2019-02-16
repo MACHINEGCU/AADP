@@ -1,0 +1,135 @@
+<meta charset="utf-8">
+  <title> Merchandise </title>
+<script>
+function calculateTotal() 
+{
+
+var Name = document.getElementById('name').value;
+var chopsticks = parseInt(document.getElementById('chopsticksSold').value);
+
+var catsouvenir = parseInt(document.getElementById('catsouvenirSold').value);
+var tshirt = parseInt(document.getElementById('tshirtSold').value);
+
+var totalCost = (chopsticks * 3)+(catsouvenir *8)+(tshirt*10);
+var totalItems = (chopsticks + catsouvenir + tshirt);
+
+
+if (Name == "")
+   {
+     alert("Data missing or Invalid");
+    }
+ else
+   {
+     document.getElementById('TotalItems').value = totalItems;
+	 document.getElementById('TotalCost').value = ("£" + totalCost);
+    }
+
+	
+if (Name.length < 4)
+   
+    {
+	alert("Error, please enter more than 4 characters.")
+	}
+
+}
+
+
+function clearAll()
+{
+ document.getElementById('name').value = "";
+ document.getElementById('chopsticksSold').value = 0;
+ document.getElementById('catsouvenirSold').value = 0;
+ document.getElementById('tshirtSold').value = 0;
+ document.getElementById('TotalItems').value = "";
+  document.getElementById('TotalCost').value = "";
+ 
+ 
+ 
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+
+<table>
+ <tr>
+   <td> <h3> Name : </h3> </td>
+   <td> <input type="text" id="name" size="20" > </td>
+ </tr>
+ 
+ 
+ 
+ <tr>
+   <td> <h3> Chopsticks:( &pound; 3) </h3> </td>
+   <td> 
+        <select id= 'chopsticksSold'>
+        <option value=0 selected> 0 </option>
+		<option value=1> 1 </option>
+		<option value=2> 2</option>
+		<option value=3> 3 </option>
+		<option value=4> 4 </option>
+		
+		</select>
+   </td>
+ </tr>
+  <tr>
+
+ <td> <h3> Cat Souvenirs:( &pound; 8) </h3> </td>
+   <td> 
+        <select id= 'catsouvenirSold'>
+        <option value=0 selected> 0 </option>
+		<option value=1> 1 </option>
+		<option value=2> 2</option>
+		<option value=3> 3 </option>
+		<option value=4> 4 </option>
+		
+		</select>
+   </td>
+ </tr>
+
+ <tr>
+   <td> <h3> T-shirt:( &pound; 10) </h3> </td>
+   <td> 
+        <select id= 'tshirtSold'>
+        <option value=0 selected> 0 </option>
+		<option value=1> 1 </option>
+		<option value=2> 2</option>
+		<option value=3> 3 </option>
+		<option value=4> 4 </option>
+		
+		</select>
+   </td>
+ </tr>
+ 
+ <tr>
+   <td> <h3> Total Items: </h3> </td> 
+   <td> <input type="text" id="TotalItems" size = "7" 
+  disabled ="disabled"> </td>
+ </tr>
+ 
+  <tr>
+   <td> <h3> Total Cost : </h3> </td> 
+   <td> <input type="text" id="TotalCost" size = "7" 
+  disabled ="disabled"> </td>
+ </tr>
+
+<tr>
+ <td>
+
+<input type="button" value="Calculate" id="B1" onClick="calculateTotal()">
+
+<input type="button" value="Clear" id="B1" onClick="clearAll()">
+ 
+ </td>
+</tr>
+
+
+
+</table>
+
+</body>
+</html>
